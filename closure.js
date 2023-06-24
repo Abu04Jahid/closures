@@ -1,12 +1,15 @@
-var num1 = 2;
-var num2 = 3;
 
-var sum = function () {
-    return function(){
-        return num1 + num2;
-    }
-  };
 
-var myFunc = sum();
-console.dir(myFunc);
+function stopWatch(){
+  var startTime= Date.now();
+  function getDelay(){
+    console.log(Date.now()-startTime);
+  }
+  return getDelay;
+}
+var timer=stopWatch();
+for(var i=0;i<10000000;i++){
+  var a=Math.random()*1000000;
+}
+console.dir(timer);
 
